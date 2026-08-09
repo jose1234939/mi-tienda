@@ -1,5 +1,6 @@
 </> HTML
-<!DOCTYPE html>
+
+ <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -166,6 +167,45 @@
       line-height: 1.7;
       color: #ddd;
     }
+    .faq {
+      max-width: 800px;
+      margin: auto;
+    }
+    .faq details {
+      background: white;
+      margin-bottom: 12px;
+      border-radius: 12px;
+      padding: 18px 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    .faq summary {
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .faq p {
+      margin-top: 12px;
+      color: #666;
+      line-height: 1.6;
+    }
+    .mission-vision {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      background: #f1e8e5;
+    }
+    .mission-vision > div {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+    }
+    .mission-vision .section-title {
+      margin-bottom: 15px;
+    }
+    .mission-vision p {
+      text-align: center;
+      line-height: 1.7;
+      color: #666;
+    }
     footer {
       background: #000;
       color: #aaa;
@@ -191,6 +231,9 @@
       .product-img {
         height: 230px;
       }
+      .mission-vision {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -201,6 +244,8 @@
     <a href="#inicio">Inicio</a>
     <a href="#productos">Productos</a>
     <a href="#nosotros">Nosotros</a>
+    <a href="#faq">Preguntas frecuentes</a>
+    <a href="#mision">Misión y Visión</a>
   </nav>
 </header>
 <section class="hero" id="inicio">
@@ -330,6 +375,45 @@
     pensados para quienes quieren vestir con un estilo casual,
     moderno y juvenil.
   </p>
+</section>
+<section id="faq">
+  <h2 class="section-title">Preguntas frecuentes</h2>
+  <div class="faq">
+    <details>
+      <summary>¿Cómo puedo comprar un producto?</summary>
+      <p>Puedes seleccionar el botón "Comprar por WhatsApp" del producto que te interese y comunicarte directamente con nosotros.</p>
+    </details>
+    <details>
+      <summary>¿Realizan envíos?</summary>
+      <p>Sí, contamos con opciones de entrega. Escríbenos por WhatsApp para conocer disponibilidad y costos.</p>
+    </details>
+    <details>
+      <summary>¿Cómo puedo saber si un producto está disponible?</summary>
+      <p>Comunícate con nosotros por WhatsApp y te confirmaremos la disponibilidad del producto.</p>
+    </details>
+    <details>
+      <summary>¿Puedo consultar otros productos?</summary>
+      <p>Claro. Puedes escribirnos por WhatsApp para consultar por otros productos, colores, tallas o modelos.</p>
+    </details>
+  </div>
+</section>
+<section class="mission-vision" id="mision">
+  <div>
+    <h2 class="section-title">Misión</h2>
+    <p>
+      Ofrecer ropa y accesorios casuales y juveniles, brindando
+      productos de calidad y una atención cercana para que cada
+      cliente encuentre su propio estilo.
+    </p>
+  </div>
+  <div>
+    <h2 class="section-title">Visión</h2>
+    <p>
+      Ser una tienda reconocida por su estilo, calidad y atención,
+      creciendo para ofrecer cada vez más opciones de moda a
+      nuestros clientes.
+    </p>
+  </div>
 </section>
 <footer>
   © 2026 Mi Tienda — Ropa y Accesorios
