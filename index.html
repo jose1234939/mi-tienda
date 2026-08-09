@@ -207,41 +207,36 @@
       color: #666;
     }
     .contact {
-      background: #f1e8e5;
       text-align: center;
+      background: #f8f0ed;
     }
-    .contact p {
-      max-width: 700px;
-      margin: 10px auto;
-      line-height: 1.7;
-      color: #555;
-    }
-    .contact-buttons {
-      margin-top: 25px;
-    }
-    .contact-buttons a {
+    .contact .btn {
       margin: 5px;
     }
-    .payment {
-      max-width: 800px;
-      margin: auto;
+    .payments {
       text-align: center;
+      background: white;
     }
-    .payment p {
-      color: #666;
-      line-height: 1.7;
+    .payments p {
+      margin-bottom: 12px;
     }
     .location {
-      max-width: 800px;
-      margin: auto;
       text-align: center;
+      background: #f1e8e5;
     }
     .location p {
-      color: #666;
+      max-width: 650px;
+      margin: 12px auto;
       line-height: 1.7;
-      margin-bottom: 20px;
+    }
+    .location .btn {
+      margin-top: 10px;
     }
     .testimonials {
+      background: white;
+      text-align: center;
+    }
+    .testimonial-container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
@@ -249,27 +244,28 @@
       margin: auto;
     }
     .testimonial {
-      background: white;
+      background: #faf7f5;
       padding: 25px;
       border-radius: 18px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      text-align: center;
+    }
+    .testimonial strong {
+      font-size: 20px;
     }
     .testimonial p {
+      margin-top: 12px;
       color: #666;
       line-height: 1.6;
-      margin-top: 10px;
     }
     .blog {
       text-align: center;
-      background: #faf7f5;
+      background: #eadcf5;
     }
     .blog p {
       max-width: 650px;
-      margin: auto;
-      color: #666;
+      margin: 0 auto 20px;
       line-height: 1.7;
-      margin-bottom: 25px;
+      color: #555;
     }
     footer {
       background: #000;
@@ -277,11 +273,6 @@
       text-align: center;
       padding: 25px;
       font-size: 14px;
-    }
-    @media (max-width: 800px) {
-      .testimonials {
-        grid-template-columns: 1fr;
-      }
     }
     @media (max-width: 600px) {
       header {
@@ -304,11 +295,13 @@
       .mission-vision {
         grid-template-columns: 1fr;
       }
+      .testimonial-container {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-
 <header>
   <div class="logo">Mi Tienda</div>
   <nav>
@@ -317,11 +310,8 @@
     <a href="#nosotros">Nosotros</a>
     <a href="#faq">Preguntas frecuentes</a>
     <a href="#mision">Misión y Visión</a>
-    <a href="#contacto">Contacto</a>
-    <a href="#blog">Blog</a>
   </nav>
 </header>
-
 <section class="hero" id="inicio">
   <div class="hero-text">
     <h1>Tu estilo.<br>Tu forma.</h1>
@@ -334,38 +324,29 @@
     </a>
   </div>
 </section>
-
 <section id="productos">
   <h2 class="section-title">Nuestros productos</h2>
-
   <div class="categories">
     <button class="category active" onclick="filterProducts('todos', this)">
       Todos
     </button>
-
     <button class="category" onclick="filterProducts('ropa', this)">
       Ropa
     </button>
-
     <button class="category" onclick="filterProducts('accesorios', this)">
       Accesorios
     </button>
   </div>
-
   <div class="products">
-
     <!-- PRODUCTO 1 -->
     <div class="product" data-category="ropa">
       <div class="product-img">
         <img src="Sueter%20Mujer.jpg" alt="Suéter para Mujer">
       </div>
-
       <div class="product-info">
         <h3>Camiseta Casual</h3>
         <p>Camiseta básica juvenil</p>
-
         <div class="price">Q150.00</div>
-
         <a
           class="whatsapp"
           href="https://wa.me/50244503872?text=Hola,%20me%20interesa%20comprar%20la%20Camiseta%20Casual"
@@ -374,19 +355,15 @@
         </a>
       </div>
     </div>
-
     <!-- PRODUCTO 2 -->
     <div class="product" data-category="ropa">
       <div class="product-img">
         <img src="Pantalon.jpg" alt="Jeans Casual">
       </div>
-
       <div class="product-info">
         <h3>Jeans Casual</h3>
         <p>Estilo moderno y cómodo</p>
-
         <div class="price">Q350.00</div>
-
         <a
           class="whatsapp"
           href="https://wa.me/50244503872?text=Hola,%20me%20interesa%20comprar%20los%20Jeans%20Casual"
@@ -395,19 +372,15 @@
         </a>
       </div>
     </div>
-
     <!-- PRODUCTO 3 -->
     <div class="product" data-category="ropa">
       <div class="product-img">
         <img src="Vestido.jpg" alt="Vestido Casual">
       </div>
-
       <div class="product-info">
         <h3>Vestido Casual</h3>
         <p>Ideal para un look juvenil</p>
-
         <div class="price">Q300.00</div>
-
         <a
           class="whatsapp"
           href="https://wa.me/50244503872?text=Hola,%20me%20interesa%20comprar%20el%20Vestido%20Casual"
@@ -416,19 +389,15 @@
         </a>
       </div>
     </div>
-
     <!-- PRODUCTO 4 -->
     <div class="product" data-category="accesorios">
       <div class="product-img">
         <img src="Bolso.jpg" alt="Bolso">
       </div>
-
       <div class="product-info">
         <h3>Bolso</h3>
         <p>Bolso casual para todos los días</p>
-
         <div class="price">Q220.00</div>
-
         <a
           class="whatsapp"
           href="https://wa.me/50244503872?text=Hola,%20me%20interesa%20comprar%20el%20Bolso"
@@ -437,19 +406,15 @@
         </a>
       </div>
     </div>
-
     <!-- PRODUCTO 5 -->
     <div class="product" data-category="accesorios">
       <div class="product-img">
         <img src="images.jpg" alt="Lentes de Sol">
       </div>
-
       <div class="product-info">
         <h3>Lentes de Sol</h3>
         <p>Un toque moderno para tu look</p>
-
         <div class="price">Q180.00</div>
-
         <a
           class="whatsapp"
           href="https://wa.me/50244503872?text=Hola,%20me%20interesan%20los%20Lentes%20de%20Sol"
@@ -458,19 +423,15 @@
         </a>
       </div>
     </div>
-
     <!-- PRODUCTO 6 -->
     <div class="product" data-category="accesorios">
       <div class="product-img">
         <img src="Gorra.jpg" alt="Gorra">
       </div>
-
       <div class="product-info">
         <h3>Gorra</h3>
         <p>Estilo casual y juvenil</p>
-
         <div class="price">Q120.00</div>
-
         <a
           class="whatsapp"
           href="https://wa.me/50244503872?text=Hola,%20me%20interesa%20comprar%20la%20Gorra"
@@ -479,27 +440,21 @@
         </a>
       </div>
     </div>
-
   </div>
 </section>
-
 <section class="about" id="nosotros">
   <h2 class="section-title">
     Sobre nosotros
   </h2>
-
   <p>
     Bienvenido a Mi Tienda. Aquí encontrarás ropa y accesorios
     pensados para quienes quieren vestir con un estilo casual,
     moderno y juvenil.
   </p>
 </section>
-
 <section id="faq">
   <h2 class="section-title">Preguntas frecuentes</h2>
-
   <div class="faq">
-
     <details>
       <summary>¿Cómo puedo comprar un producto?</summary>
       <p>
@@ -508,7 +463,6 @@
         con nosotros.
       </p>
     </details>
-
     <details>
       <summary>¿Realizan envíos?</summary>
       <p>
@@ -516,7 +470,6 @@
         WhatsApp para conocer disponibilidad y costos.
       </p>
     </details>
-
     <details>
       <summary>¿Cómo puedo saber si un producto está disponible?</summary>
       <p>
@@ -524,7 +477,6 @@
         la disponibilidad del producto.
       </p>
     </details>
-
     <details>
       <summary>¿Puedo consultar otros productos?</summary>
       <p>
@@ -532,196 +484,134 @@
         otros productos, colores, tallas o modelos.
       </p>
     </details>
-
   </div>
 </section>
-
 <section class="mission-vision" id="mision">
-
   <div>
     <h2 class="section-title">Misión</h2>
-
     <p>
       Ofrecer ropa y accesorios casuales y juveniles, brindando
       productos de calidad y una atención cercana para que cada
       cliente encuentre su propio estilo.
     </p>
   </div>
-
   <div>
     <h2 class="section-title">Visión</h2>
-
     <p>
       Ser una tienda reconocida por su estilo, calidad y atención,
       creciendo para ofrecer cada vez más opciones de moda a
       nuestros clientes.
     </p>
   </div>
-
 </section>
-
-<section class="contact" id="contacto">
+<section class="contact">
   <h2 class="section-title">Formas de contacto</h2>
-
-  <p>
-    📱 WhatsApp: +502 4450 3872
-  </p>
-
-  <p>
-    📍 Dirección: Km. 5, Carretera al Atlántico,
-    Zona 17, Ciudad de Guatemala, Guatemala.
-  </p>
-
-  <div class="contact-buttons">
-
-    <a
-      class="btn"
-      href="https://wa.me/50244503872?text=Hola,%20quiero%20información%20sobre%20Mi%20Tienda"
-      target="_blank">
-      💬 Escribir por WhatsApp
-    </a>
-
-    <a
-      class="btn"
-      href="mailto:contacto@mitienda.com">
-      📧 Correo electrónico
-    </a>
-
-  </div>
+  <a
+    class="btn"
+    href="https://wa.me/50244503872?text=Hola,%20quiero%20información%20sobre%20Mi%20Tienda"
+    target="_blank">
+    💬 Escribir por WhatsApp
+  </a>
+  <a
+    class="btn"
+    href="mailto:contacto@mitienda.com">
+    📧 Correo electrónico
+  </a>
 </section>
-
-<section>
+<section class="payments">
   <h2 class="section-title">Formas de pago</h2>
-
-  <div class="payment">
-    <p>
-      💵 Efectivo
-    </p>
-
-    <p>
-      🏦 Transferencia bancaria
-    </p>
-
-    <p>
-      💳 Otros métodos de pago disponibles
-    </p>
-
-    <p>
-      Para confirmar el método de pago disponible para tu compra,
-      puedes escribirnos directamente por WhatsApp.
-    </p>
-  </div>
+  <p>
+    🏦 Transferencia bancaria
+  </p>
+  <p>
+    💳 Otros métodos de pago disponibles
+  </p>
+  <p>
+    Para confirmar el método de pago disponible para tu compra,
+    puedes escribirnos directamente por WhatsApp.
+  </p>
 </section>
-
-<section>
-  <h2 class="section-title">Envíos y ubicación</h2>
-
-  <div class="location">
-
-    <p>
-      📍 Nos encontramos en:
-    </p>
-
-    <p>
-      <strong>
-        Km. 5, Carretera al Atlántico,
-        Zona 17, Ciudad de Guatemala, Guatemala.
-      </strong>
-    </p>
-
-    <p>
-      🚚 Para conocer las opciones, cobertura y costo de envío,
-      comunícate con nosotros por WhatsApp.
-    </p>
-
-    <a
-      class="btn"
-      href="https://www.google.com/maps/search/?api=1&query=Km%205%20Carretera%20al%20Atlantico%20Zona%2017%20Ciudad%20de%20Guatemala"
-      target="_blank">
-      📍 Ver ubicación en Google Maps
-    </a>
-
-  </div>
+<section class="location">
+  <h2 class="section-title">Nuestra ubicación</h2>
+  <p>
+    📍 Nos encontramos en:
+  </p>
+  <p>
+    <strong>
+      Km. 5, Carretera al Atlántico,
+      Zona 17, Ciudad de Guatemala, Guatemala.
+    </strong>
+  </p>
+  <p>
+    🚚 Para conocer las opciones, cobertura y costo de envío,
+    comunícate con nosotros por WhatsApp.
+  </p>
+  <a
+    class="btn"
+    href="https://www.google.com/maps/search/?api=1&query=Km%205%20Carretera%20al%20Atlantico%20Zona%2017%20Ciudad%20de%20Guatemala"
+    target="_blank">
+    📍 Ver ubicación en Google Maps
+  </a>
 </section>
-
-<section>
-  <h2 class="section-title">⭐ Opiniones de nuestros clientes</h2>
-
-  <div class="testimonials">
-
+<section class="testimonials">
+  <h2 class="section-title">
+    Opiniones de nuestros clientes
+  </h2>
+  <div class="testimonial-container">
     <div class="testimonial">
       <strong>⭐⭐⭐⭐⭐</strong>
       <p>
         "Excelente atención y muy bonitos productos."
       </p>
     </div>
-
     <div class="testimonial">
       <strong>⭐⭐⭐⭐⭐</strong>
       <p>
         "Me gustó mucho la calidad y el servicio."
       </p>
     </div>
-
     <div class="testimonial">
       <strong>⭐⭐⭐⭐⭐</strong>
       <p>
         "Muy buena atención. Volvería a comprar."
       </p>
     </div>
-
   </div>
 </section>
-
-<section class="blog" id="blog">
-  <h2 class="section-title">📝 Nuestro Blog</h2>
-
+<section class="blog">
+  <h2 class="section-title">
+    Nuestro Blog
+  </h2>
   <p>
-    Encuentra consejos de moda, novedades, ideas para combinar
-    tus prendas y noticias de nuestra tienda.
+    Descubre consejos de moda, ideas para combinar tus prendas,
+    tendencias y mucho más en nuestro blog.
   </p>
-
   <a
     class="btn"
-    href="blog.html"
+    href="https://mitiendaonline1234.blogspot.com/"
     target="_blank">
-    Visitar nuestro Blog
+    📰 Visitar nuestro Blog
   </a>
 </section>
-
 <footer>
   © 2026 Mi Tienda — Ropa y Accesorios
 </footer>
-
 <script>
-
 function filterProducts(category, button) {
-
   const products = document.querySelectorAll(".product");
   const buttons = document.querySelectorAll(".category");
-
-  buttons.forEach(function(item) {
-    item.classList.remove("active");
+  buttons.forEach(btn => {
+    btn.classList.remove("active");
   });
-
   button.classList.add("active");
-
-  products.forEach(function(product) {
-
-    if (
-      category === "todos" ||
-      product.dataset.category === category
-    ) {
+  products.forEach(product => {
+    if (category === "todos" || product.dataset.category === category) {
       product.style.display = "block";
     } else {
       product.style.display = "none";
     }
-
   });
-
 }
-
 </script>
-
 </body>
 </html>
