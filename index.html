@@ -1,6 +1,6 @@
 </> HTML
 
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -206,6 +206,58 @@
       line-height: 1.7;
       color: #666;
     }
+    .contact-info {
+      max-width: 800px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+    .contact-box {
+      background: white;
+      padding: 25px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    }
+    .contact-box h3 {
+      margin-bottom: 12px;
+    }
+    .contact-box p {
+      color: #666;
+      line-height: 1.7;
+    }
+    .contact-box a {
+      display: inline-block;
+      margin-top: 12px;
+      background: #25D366;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .payment {
+      max-width: 800px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .payment-box {
+      background: white;
+      padding: 25px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    }
+    .payment-box h3 {
+      margin-bottom: 10px;
+    }
+    .payment-box p {
+      color: #666;
+      line-height: 1.6;
+    }
     footer {
       background: #000;
       color: #aaa;
@@ -231,7 +283,9 @@
       .product-img {
         height: 230px;
       }
-      .mission-vision {
+      .mission-vision,
+      .contact-info,
+      .payment {
         grid-template-columns: 1fr;
       }
     }
@@ -246,6 +300,8 @@
     <a href="#nosotros">Nosotros</a>
     <a href="#faq">Preguntas frecuentes</a>
     <a href="#mision">Misión y Visión</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#pagos">Pagos</a>
   </nav>
 </header>
 <section class="hero" id="inicio">
@@ -263,13 +319,13 @@
 <section id="productos">
   <h2 class="section-title">Nuestros productos</h2>
   <div class="categories">
-    <button class="category active" onclick="filterProducts('todos')">
+    <button class="category active" onclick="filterProducts('todos',this)">
       Todos
     </button>
-    <button class="category" onclick="filterProducts('ropa')">
+    <button class="category" onclick="filterProducts('ropa',this)">
       Ropa
     </button>
-    <button class="category" onclick="filterProducts('accesorios')">
+    <button class="category" onclick="filterProducts('accesorios',this)">
       Accesorios
     </button>
   </div>
@@ -415,6 +471,45 @@
     </p>
   </div>
 </section>
+<section id="contacto">
+  <h2 class="section-title">Formas de contacto</h2>
+  <div class="contact-info">
+    <div class="contact-box">
+      <h3>📱 WhatsApp</h3>
+      <p>Comunícate con nosotros para realizar consultas o pedidos.</p>
+      <a href="https://wa.me/50244503872" target="_blank">Escribir por WhatsApp</a>
+    </div>
+    <div class="contact-box">
+      <h3>📧 Correo electrónico</h3>
+      <p>tucorreo@gmail.com</p>
+    </div>
+    <div class="contact-box">
+      <h3>🕐 Horario de atención</h3>
+      <p>Lunes a sábado<br>9:00 AM - 6:00 PM</p>
+    </div>
+    <div class="contact-box">
+      <h3>📍 Ubicación</h3>
+      <p>Consulta nuestra ubicación y opciones de entrega por WhatsApp.</p>
+    </div>
+  </div>
+</section>
+<section id="pagos">
+  <h2 class="section-title">Formas de pago</h2>
+  <div class="payment">
+    <div class="payment-box">
+      <h3>💵 Efectivo</h3>
+      <p>Pago en efectivo al momento de recibir tu pedido.</p>
+    </div>
+    <div class="payment-box">
+      <h3>🏦 Transferencia</h3>
+      <p>Solicita nuestros datos bancarios por WhatsApp.</p>
+    </div>
+    <div class="payment-box">
+      <h3>📦 Contra entrega</h3>
+      <p>Consulta disponibilidad de pago contra entrega según tu ubicación.</p>
+    </div>
+  </div>
+</section>
 <footer>
   © 2026 Mi Tienda — Ropa y Accesorios
 </footer>
@@ -422,21 +517,17 @@
 function whatsapp(producto) {
   const numero = "50244503872";
   const mensaje = "Hola, me interesa comprar: " + producto;
-  if (numero === "50244503872") {
-    alert("El número de WhatsApp todavía no está configurado.");
-    return false;
-  }
   const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensaje);
   window.open(url, "_blank");
   return false;
 }
-function filterProducts(category) {
+function filterProducts(category, button) {
   const products = document.querySelectorAll(".product");
   const buttons = document.querySelectorAll(".category");
   buttons.forEach(button => {
     button.classList.remove("active");
   });
-  event.target.classList.add("active");
+  button.classList.add("active");
   products.forEach(product => {
     if (category === "todos" || product.dataset.category === category) {
       product.style.display = "block";
