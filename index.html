@@ -2,668 +2,365 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Mi Tienda | Ropa y Accesorios</title>
-
-<style>
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background: #faf7f5;
-  color: #222;
-}
-
-/* ENCABEZADO */
-
-header {
-  background: #111;
-  color: white;
-  padding: 18px 6%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.logo {
-  font-size: 25px;
-  font-weight: bold;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 20px;
-  font-size: 15px;
-}
-
-/* PORTADA */
-
-.hero {
-  min-height: 430px;
-  padding: 70px 6%;
-  display: flex;
-  align-items: center;
-  background: linear-gradient(135deg, #f4d7d0, #eadcf5);
-}
-
-.hero-text {
-  max-width: 600px;
-}
-
-.hero h1 {
-  font-size: clamp(40px, 7vw, 72px);
-  line-height: 1;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  font-size: 20px;
-  margin-bottom: 28px;
-  color: #444;
-}
-
-.btn {
-  display: inline-block;
-  padding: 14px 25px;
-  background: #111;
-  color: white;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* SECCIONES */
-
-section {
-  padding: 60px 6%;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 34px;
-  margin-bottom: 35px;
-}
-
-/* CATEGORÍAS */
-
-.categories {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 35px;
-}
-
-.category {
-  border: none;
-  padding: 10px 20px;
-  border-radius: 25px;
-  background: #eee;
-  cursor: pointer;
-  font-size: 15px;
-}
-
-.category:hover,
-.category.active {
-  background: #111;
-  color: white;
-}
-
-/* PRODUCTOS */
-
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.product {
-  background: white;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-}
-
-/* IMÁGENES */
-
-.product-img {
-  width: 100%;
-  height: 320px;
-  background: #f5f5f5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.product-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-/* INFORMACIÓN */
-
-.product-info {
-  padding: 20px;
-}
-
-.product-info h3 {
-  margin-bottom: 8px;
-  font-size: 20px;
-}
-
-.product-info p {
-  color: #777;
-  margin-bottom: 12px;
-  line-height: 1.5;
-}
-
-.price {
-  font-size: 21px;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-/* WHATSAPP */
-
-.whatsapp {
-  display: block;
-  text-align: center;
-  background: #25D366;
-  color: white;
-  padding: 12px;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* NOSOTROS */
-
-.about {
-  background: #111;
-  color: white;
-  text-align: center;
-}
-
-.about p {
-  max-width: 650px;
-  margin: auto;
-  line-height: 1.7;
-  color: #ddd;
-}
-
-/* PIE */
-
-footer {
-  background: #000;
-  color: #aaa;
-  text-align: center;
-  padding: 25px;
-  font-size: 14px;
-}
-
-/* CELULAR */
-
-@media (max-width: 600px) {
-
-  header {
-    padding: 15px 5%;
-  }
-
-  .logo {
-    font-size: 20px;
-  }
-
-  nav a {
-    margin-left: 8px;
-    font-size: 12px;
-  }
-
-  .hero {
-    min-height: 400px;
-    padding: 55px 5%;
-  }
-
-  section {
-    padding: 45px 5%;
-  }
-
-  .product-img {
-    height: 300px;
-  }
-
-}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Tienda | Ropa y Accesorios</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #faf7f5;
+      color: #222;
+    }
+    header {
+      background: #111;
+      color: white;
+      padding: 18px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 15px;
+    }
+    .hero {
+      min-height: 430px;
+      padding: 70px 6%;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #f4d7d0, #eadcf5);
+    }
+    .hero-text {
+      max-width: 600px;
+    }
+    .hero h1 {
+      font-size: clamp(40px, 7vw, 72px);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 28px;
+      color: #444;
+    }
+    .btn {
+      display: inline-block;
+      padding: 14px 25px;
+      background: #111;
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      background: #333;
+    }
+    section {
+      padding: 60px 6%;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 34px;
+      margin-bottom: 35px;
+    }
+    .categories {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 35px;
+    }
+    .category {
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      background: #eee;
+      cursor: pointer;
+      font-size: 15px;
+    }
+    .category:hover,
+    .category.active {
+      background: #111;
+      color: white;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .product {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+      transition: 0.2s;
+    }
+    .product:hover {
+      transform: translateY(-5px);
+    }
+    .product-img {
+      height: 260px;
+      background: #f3f3f3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .product-info {
+      padding: 20px;
+    }
+    .product-info h3 {
+      margin-bottom: 8px;
+    }
+    .product-info p {
+      color: #777;
+      margin-bottom: 12px;
+    }
+    .price {
+      font-size: 21px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    .whatsapp {
+      display: block;
+      text-align: center;
+      background: #25D366;
+      color: white;
+      padding: 12px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .about {
+      background: #111;
+      color: white;
+      text-align: center;
+    }
+    .about p {
+      max-width: 650px;
+      margin: auto;
+      line-height: 1.7;
+      color: #ddd;
+    }
+    footer {
+      background: #000;
+      color: #aaa;
+      text-align: center;
+      padding: 25px;
+      font-size: 14px;
+    }
+    @media (max-width: 600px) {
+      header {
+        padding: 15px 5%;
+      }
+      nav a {
+        margin-left: 10px;
+        font-size: 13px;
+      }
+      .hero {
+        min-height: 400px;
+        padding: 55px 5%;
+      }
+      section {
+        padding: 45px 5%;
+      }
+      .product-img {
+        height: 230px;
+      }
+    }
+  </style>
 </head>
-
 <body>
-
-<!-- ENCABEZADO -->
-
 <header>
-
-<div class="logo">
-Mi Tienda
-</div>
-
-<nav>
-
-<a href="#inicio">Inicio</a>
-
-<a href="#productos">Productos</a>
-
-<a href="#nosotros">Nosotros</a>
-
-</nav>
-
+  <div class="logo">Mi Tienda</div>
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#productos">Productos</a>
+    <a href="#nosotros">Nosotros</a>
+  </nav>
 </header>
-
-
-<!-- PORTADA -->
-
 <section class="hero" id="inicio">
-
-<div class="hero-text">
-
-<h1>
-Tu estilo.<br>
-Tu forma.
-</h1>
-
-<p>
-Ropa y accesorios casuales para darle personalidad a cada uno de tus looks.
-</p>
-
-<a href="#productos" class="btn">
-Ver productos
-</a>
-
-</div>
-
+  <div class="hero-text">
+    <h1>Tu estilo.<br>Tu forma.</h1>
+    <p>
+      Ropa y accesorios casuales para darle personalidad
+      a cada uno de tus looks.
+    </p>
+    <a href="#productos" class="btn">
+      Ver productos
+    </a>
+  </div>
 </section>
-
-
-<!-- PRODUCTOS -->
-
 <section id="productos">
-
-<h2 class="section-title">
-Nuestros productos
-</h2>
-
-
-<div class="categories">
-
-<button class="category active" onclick="filterProducts('todos')">
-Todos
-</button>
-
-<button class="category" onclick="filterProducts('ropa')">
-Ropa
-</button>
-
-<button class="category" onclick="filterProducts('accesorios')">
-Accesorios
-</button>
-
-</div>
-
-
-<div class="products">
-
-
-<!-- PRODUCTO 1 -->
-
-<div class="product" data-category="ropa">
-
-<div class="product-img">
-
-<img src="Sueter%20Mujer.jpg" alt="Suéter para Mujer">
-
-</div>
-
-<div class="product-info">
-
-<h3>
-Suéter para Mujer
-</h3>
-
-<p>
-Suéter casual y juvenil para mujer.
-</p>
-
-<div class="price">
-$25.00
-</div>
-
-<a
-class="whatsapp"
-href="#"
-onclick="return whatsapp('Suéter para Mujer')">
-
-💬 Comprar por WhatsApp
-
-</a>
-
-</div>
-
-</div>
-
-
-<!-- PRODUCTO 2 -->
-
-<div class="product" data-category="ropa">
-
-<div class="product-img">
-
-<div style="font-size:70px;">
-👖
-</div>
-
-</div>
-
-<div class="product-info">
-
-<h3>
-Jeans Casual
-</h3>
-
-<p>
-Jeans modernos y cómodos para un look casual.
-</p>
-
-<div class="price">
-$35.00
-</div>
-
-<a
-class="whatsapp"
-href="#"
-onclick="return whatsapp('Jeans Casual')">
-
-💬 Comprar por WhatsApp
-
-</a>
-
-</div>
-
-</div>
-
-
-<!-- PRODUCTO 3 -->
-
-<div class="product" data-category="ropa">
-
-<div class="product-img">
-
-<div style="font-size:70px;">
-👗
-</div>
-
-</div>
-
-<div class="product-info">
-
-<h3>
-Vestido Casual
-</h3>
-
-<p>
-Vestido juvenil ideal para diferentes ocasiones.
-</p>
-
-<div class="price">
-$30.00
-</div>
-
-<a
-class="whatsapp"
-href="#"
-onclick="return whatsapp('Vestido Casual')">
-
-💬 Comprar por WhatsApp
-
-</a>
-
-</div>
-
-</div>
-
-
-<!-- PRODUCTO 4 -->
-
-<div class="product" data-category="accesorios">
-
-<div class="product-img">
-
-<div style="font-size:70px;">
-👜
-</div>
-
-</div>
-
-<div class="product-info">
-
-<h3>
-Bolso Casual
-</h3>
-
-<p>
-Bolso práctico y moderno para todos los días.
-</p>
-
-<div class="price">
-$22.00
-</div>
-
-<a
-class="whatsapp"
-href="#"
-onclick="return whatsapp('Bolso Casual')">
-
-💬 Comprar por WhatsApp
-
-</a>
-
-</div>
-
-</div>
-
-
-<!-- PRODUCTO 5 -->
-
-<div class="product" data-category="accesorios">
-
-<div class="product-img">
-
-<div style="font-size:70px;">
-🕶️
-</div>
-
-</div>
-
-<div class="product-info">
-
-<h3>
-Lentes de Sol
-</h3>
-
-<p>
-Un toque moderno para tu look.
-</p>
-
-<div class="price">
-$18.00
-</div>
-
-<a
-class="whatsapp"
-href="#"
-onclick="return whatsapp('Lentes de Sol')">
-
-💬 Comprar por WhatsApp
-
-</a>
-
-</div>
-
-</div>
-
-
-<!-- PRODUCTO 6 -->
-
-<div class="product" data-category="accesorios">
-
-<div class="product-img">
-
-<div style="font-size:70px;">
-🧢
-</div>
-
-</div>
-
-<div class="product-info">
-
-<h3>
-Gorra
-</h3>
-
-<p>
-Estilo casual y juvenil.
-</p>
-
-<div class="price">
-$12.00
-</div>
-
-<a
-class="whatsapp"
-href="#"
-onclick="return whatsapp('Gorra')">
-
-💬 Comprar por WhatsApp
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
+  <h2 class="section-title">Nuestros productos</h2>
+  <div class="categories">
+    <button class="category active" onclick="filterProducts('todos')">
+      Todos
+    </button>
+    <button class="category" onclick="filterProducts('ropa')">
+      Ropa
+    </button>
+    <button class="category" onclick="filterProducts('accesorios')">
+      Accesorios
+    </button>
+  </div>
+  <div class="products">
+    <!-- PRODUCTO 1 -->
+    <div class="product" data-category="ropa">
+      <div class="product-img"><img src="Sueter%20Mujer.jpg" alt="Suéter para Mujer"></div>
+      <div class="product-info">
+        <h3>Camiseta Casual</h3>
+        <p>Camiseta básica juvenil</p>
+        <div class="price">$15.00</div>
+        <a
+          class="whatsapp"
+          href="#"
+          onclick="return whatsapp('Camiseta Casual')">
+          💬 Comprar por WhatsApp
+        </a>
+      </div>
+    </div>
+    <!-- PRODUCTO 2 -->
+    <div class="product" data-category="ropa">
+      <div class="product-img">👖</div>
+      <div class="product-info">
+        <h3>Jeans Casual</h3>
+        <p>Estilo moderno y cómodo</p>
+        <div class="price">$35.00</div>
+        <a
+          class="whatsapp"
+          href="#"
+          onclick="return whatsapp('Jeans Casual')">
+          💬 Comprar por WhatsApp
+        </a>
+      </div>
+    </div>
+    <!-- PRODUCTO 3 -->
+    <div class="product" data-category="ropa">
+      <div class="product-img">👗</div>
+      <div class="product-info">
+        <h3>Vestido Casual</h3>
+        <p>Ideal para un look juvenil</p>
+        <div class="price">$30.00</div>
+        <a
+          class="whatsapp"
+          href="#"
+          onclick="return whatsapp('Vestido Casual')">
+          💬 Comprar por WhatsApp
+        </a>
+      </div>
+    </div>
+    <!-- PRODUCTO 4 -->
+    <div class="product" data-category="accesorios">
+      <div class="product-img">👜</div>
+      <div class="product-info">
+        <h3>Bolso</h3>
+        <p>Bolso casual para todos los días</p>
+        <div class="price">$22.00</div>
+        <a
+          class="whatsapp"
+          href="#"
+          onclick="return whatsapp('Bolso')">
+          💬 Comprar por WhatsApp
+        </a>
+      </div>
+    </div>
+    <!-- PRODUCTO 5 -->
+    <div class="product" data-category="accesorios">
+      <div class="product-img">🕶️</div>
+      <div class="product-info">
+        <h3>Lentes de Sol</h3>
+        <p>Un toque moderno para tu look</p>
+        <div class="price">$18.00</div>
+        <a
+          class="whatsapp"
+          href="#"
+          onclick="return whatsapp('Lentes de Sol')">
+          💬 Comprar por WhatsApp
+        </a>
+      </div>
+    </div>
+    <!-- PRODUCTO 6 -->
+    <div class="product" data-category="accesorios">
+      <div class="product-img">🧢</div>
+      <div class="product-info">
+        <h3>Gorra</h3>
+        <p>Estilo casual y juvenil</p>
+        <div class="price">$12.00</div>
+        <a
+          class="whatsapp"
+          href="#"
+          onclick="return whatsapp('Gorra')">
+          💬 Comprar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
 </section>
-
-
-<!-- NOSOTROS -->
-
 <section class="about" id="nosotros">
-
-<h2 class="section-title">
-Sobre nosotros
-</h2>
-
-<p>
-Bienvenido a Mi Tienda. Aquí encontrarás ropa y accesorios pensados para quienes quieren vestir con un estilo casual, moderno y juvenil.
-</p>
-
+  <h2 class="section-title">
+    Sobre nosotros
+  </h2>
+  <p>
+    Bienvenido a Mi Tienda. Aquí encontrarás ropa y accesorios
+    pensados para quienes quieren vestir con un estilo casual,
+    moderno y juvenil.
+  </p>
 </section>
-
-
-<!-- PIE -->
-
 <footer>
-
-© 2026 Mi Tienda — Ropa y Accesorios
-
+  © 2026 Mi Tienda — Ropa y Accesorios
 </footer>
-
-
 <script>
-
-/* WHATSAPP */
-
 function whatsapp(producto) {
-
-const numero = "50200000000";
-
-const mensaje =
-"Hola, me interesa comprar: " + producto;
-
-if (numero === "50200000000") {
-
-alert(
-"El número de WhatsApp todavía no está configurado."
-);
-
-return false;
-
+  const numero = "50200000000";
+  const mensaje = "Hola, me interesa comprar: " + producto;
+  if (numero === "50200000000") {
+    alert("El número de WhatsApp todavía no está configurado.");
+    return false;
+  }
+  const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensaje);
+  window.open(url, "_blank");
+  return false;
 }
-
-const url =
-"https://wa.me/" +
-numero +
-"?text=" +
-encodeURIComponent(mensaje);
-
-window.open(url, "_blank");
-
-return false;
-
-}
-
-
-/* FILTRO DE PRODUCTOS */
-
 function filterProducts(category) {
-
-const products =
-document.querySelectorAll(".product");
-
-const buttons =
-document.querySelectorAll(".category");
-
-buttons.forEach(button => {
-button.classList.remove("active");
-});
-
-event.target.classList.add("active");
-
-products.forEach(product => {
-
-if (
-category === "todos" ||
-product.dataset.category === category
-) {
-
-product.style.display = "block";
-
-} else {
-
-product.style.display = "none";
-
+  const products = document.querySelectorAll(".product");
+  const buttons = document.querySelectorAll(".category");
+  buttons.forEach(button => {
+    button.classList.remove("active");
+  });
+  event.target.classList.add("active");
+  products.forEach(product => {
+    if (category === "todos" || product.dataset.category === category) {
+      product.style.display = "block";
+    } else {
+      product.style.display = "none";
+    }
+  });
 }
-
-});
-
-}
-
 </script>
-
 </body>
 </html>
